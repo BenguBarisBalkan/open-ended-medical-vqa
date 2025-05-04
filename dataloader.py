@@ -15,7 +15,7 @@ import numpy as np
 import pdb
 
 class medvqaDataset(Dataset):
-    def __init__(self, path, split='train',like_test=False,prefix_length=2,model_type = 'gpt2'):
+    def __init__(self, path, split='train',like_test=False,prefix_length=2,model_type = 'gpt2', setting='?'):
         super().__init__()
         data_path = path+split+'.pkl'
         with open(data_path, 'rb') as f:

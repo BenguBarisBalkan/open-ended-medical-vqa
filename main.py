@@ -2,7 +2,7 @@ from train import pytorch_model_run
 import torch
 from predict import eval_gpt_open_ended
 from models import VQAmedModel, VQAmedModel_abl
-from data_loaders.dataloader import medvqaDataset
+from dataloader_ablations import medvqaDataset
 from torch.utils.data import DataLoader
 import argparse
 import numpy as np
@@ -42,6 +42,8 @@ def parse_argument():
     parser.add_argument("--eval", dest="eval", action="store_true")
 
     parser.add_argument("--verbose", dest="verbose", action="store_true")
+
+    parser.add_argument("--data_partition", default='?')
 
     args = parser.parse_args()
     
